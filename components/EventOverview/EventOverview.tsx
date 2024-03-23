@@ -9,14 +9,14 @@ const games = [
   {
     home: "/images/SSG_Etzbach.jpg",
     away: "/images/SSG_Etzbach.jpg",
-    day: "20.07.2023",
+    day: "22.07.2023",
     time: "17:30 Uhr",
     liga: "Bezirksliga Herren",
   },
   {
     home: "/images/SSG_Etzbach.jpg",
     away: "/images/SSG_Etzbach.jpg",
-    day: "20.07.2023",
+    day: "23.07.2023",
     time: "17:30 Uhr",
     liga: "Bezirksliga Herren",
   },
@@ -24,22 +24,22 @@ const games = [
 
 export default function EventOverview() {
   return (
-    <div className="bg-white mx-auto max-w-7xl py-24 sm:py-32 px-6 lg:px-8">
+    <div className="bg-gray-50 mx-auto max-w-7xl py-24 sm:py-24 px-6 lg:px-8">
       <div className="mx-auto text-left">
-        <h2 className="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
+        <h2 className="text-2xl font-regular text-gray-900 sm:text-2xl">
           Bevorstehende Spiele
         </h2>
       </div>
       <ul
         role="list"
-        className="grid mt-16 max-w-7xl m-auto grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        className="grid mt-8 max-w-7xl m-auto grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
       >
         {games.map((game) => (
           <li
             key={game.day}
             className="col-span-1 divide-y rounded-xl divide-primary-delay/90 bg-white shadow overflow-hidden"
           >
-            <div className="bg-gray-50">
+            <div className="bg-white">
               <div className="-mt-px flex">
                 <div className="flex w-0 flex-1">
                   <div className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-light text-gray-900">

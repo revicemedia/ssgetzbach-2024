@@ -7,14 +7,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function HeroSwiper() {
+export default function HeroSwiper({slides}: any) {
+
+  console.log(slides)
   return (
     <Swiper
       spaceBetween={0}
       slidesPerView={1}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
-      className="w-full max-h-64 lg:max-h-[44rem]"
+      className="w-full h-64 lg:h-[44rem]"
       autoplay={{
         delay: 4000,
         disableOnInteraction: false,
@@ -26,54 +28,14 @@ export default function HeroSwiper() {
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
     >
-      <SwiperSlide className="min-w-full min-h-full aspect-auto">
+      {slides.items.map((item: any) => (
+      <SwiperSlide className="h-full w-full" key={item.fields.image.fields.file.url}>
         <img
-          src="../../images/volleyball.jpg"
-          className="object-cover object-center w-full h-full"
+          src={item.fields.image.fields.file.url}
+          className="object-cover object-center min-w-full min-h-full"
         />
       </SwiperSlide>
-      <SwiperSlide className="h-auto min-w-full">
-        <img
-          src="../../images/volleyball_2.jpg"
-          className="object-cover object-center w-full h-auto"
-        />
-      </SwiperSlide>
-      <SwiperSlide className="h-auto min-w-full">
-        <img
-          src="../../images/test.jpg"
-          className="object-cover object-center w-full h-auto"
-        />
-      </SwiperSlide>
-      <SwiperSlide className="h-auto min-w-full">
-        <img
-          src="../../images/test.jpg"
-          className="object-cover object-center w-full h-auto"
-        />
-      </SwiperSlide>
-      <SwiperSlide className="h-auto min-w-full">
-        <img
-          src="../../images/test.jpg"
-          className="object-cover object-center w-full h-auto"
-        />
-      </SwiperSlide>
-      <SwiperSlide className="h-auto min-w-full">
-        <img
-          src="../../images/test.jpg"
-          className="object-cover object-center w-full h-auto"
-        />
-      </SwiperSlide>
-      <SwiperSlide className="h-auto min-w-full">
-        <img
-          src="../../images/test.jpg"
-          className="object-cover object-center w-full h-auto"
-        />
-      </SwiperSlide>
-      <SwiperSlide className="h-auto min-w-full">
-        <img
-          src="../../images/test.jpg"
-          className="object-cover object-center w-full h-auto"
-        />
-      </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

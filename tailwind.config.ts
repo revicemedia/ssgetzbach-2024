@@ -7,7 +7,15 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '16/6': '16 / 6',
+      },
+      colors: {
+        darkbg: "#000503"
+      }
+    },
   },
   plugins: [],
 };

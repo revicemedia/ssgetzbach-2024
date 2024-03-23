@@ -6,10 +6,9 @@ import News from "@/components/News/News";
 import { client } from "@/contentful";
 
 async function getSlideshow() {
-  const res = await client.getEntries({content_type: "homeSlideshow", order: "fields.positionierung"})
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
- 
+
+  const res = await client.getEntries({content_type: "homeSlideshow"})
+
   return res
 }
 

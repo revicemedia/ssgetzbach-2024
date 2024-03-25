@@ -17,7 +17,7 @@ export default function HeroSwiper({slides}: any) {
       onSwiper={(swiper) => console.log(swiper)}
       className="w-full h-64 lg:h-[44rem]"
       autoplay={{
-        delay: 4000,
+        delay: 5000,
         disableOnInteraction: false,
       }}
       pagination={{
@@ -26,6 +26,10 @@ export default function HeroSwiper({slides}: any) {
       }}
       navigation={true}
       modules={[Autoplay, Pagination, Navigation]}
+      style={{
+        // @ts-ignore
+        "--swiper-theme-color": "#fff",
+      }}
     >
       {slides.items.map((item: any) => (
       <SwiperSlide className="h-full w-full" key={item.fields.image.fields.file.url}>

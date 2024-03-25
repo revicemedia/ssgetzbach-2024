@@ -40,10 +40,10 @@ import { DevicePhoneMobileIcon, EnvelopeOpenIcon, PhoneArrowDownLeftIcon, PhoneX
 
 export default function Vorstand({members}: any) {
   return (
-    <div className="bg-gray-50 py-24 sm:py-24">
+    <div className="bg-gray-50 py-24 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {members.items.map((person) => (
+            {members.items.map((person: any) => (
                 <li
                 key={person.fields.name}
                 className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-xl bg-white text-center shadow"

@@ -8,21 +8,22 @@ export interface Params {
   teamSlug: string;
 }
 
-async function getVorstand() {
-  // @ts-ignore
-  const res = await client.getEntries({content_type: "vereinschronik", order: "-fields.jahr"})
-
+async function getNews() {
+  const res = await client.getEntries({content_type: "news"})
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+ 
   return res
 }
 
 export default async function Home() {
-  const data = await getVorstand();
+  const data = await getNews();
+
   return (
     <main>
       <Navbar />
       <div className="pt-24 bg-gray-50">
-        <SubPageHeader headline="Vereinschronik" description="Dies sind die wichtigsten Daten für unseren Verein."/>
-        <Timeline data={data}/>
+        <SubPageHeader headline="Neuigkeiten" description="Dies sind die wichtigsten Daten für unseren Verein."/>
       </div>
       <Footer />
     </main>

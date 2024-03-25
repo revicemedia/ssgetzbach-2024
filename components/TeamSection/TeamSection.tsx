@@ -15,7 +15,7 @@ export default function TeamSection({data}: any) {
             alt="Mannschaftsfoto"
           />
         </figure>
-        <StickyTest />
+        <StickyTest data={data}/>
       </div>
   )
 }

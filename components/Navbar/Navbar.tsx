@@ -22,13 +22,13 @@ const products = [
 ]
 
 const verein = [
-  { name: 'News', description: 'Bezirksliga Rhein-Westerwald', href: '/verein/vorstand', icon: ChartPieIcon },
-  { name: 'Spielberichte', description: 'Bezirksliga Rhein-Westerwald', href: '/verein/vorstand', icon: ChartPieIcon },
+  { name: 'News', description: 'Bezirksliga Rhein-Westerwald', href: '/verein/news', icon: ChartPieIcon },
+  { name: 'Spielberichte', description: 'Bezirksliga Rhein-Westerwald', href: '/verein/spielberichte', icon: ChartPieIcon },
   { name: 'Chronik', description: 'Speak directly to your customers', href: '/verein/chronik', icon: CursorArrowRaysIcon },
   { name: 'Termine', description: 'Bezirksliga Rhein-Westerwald', href: '/verein/termine', icon: ChartPieIcon },
   { name: 'Vorstand', description: 'Bezirksliga Rhein-Westerwald', href: '/verein/vorstand', icon: ChartPieIcon },
-  { name: 'Satzung', description: 'Your customers’ data will be safe and secure', href: 'verein/satzung', icon: FingerPrintIcon },
-  { name: 'Downloads', description: 'Connect with third-party tools', href: 'verein/downloads', icon: SquaresPlusIcon },
+  { name: 'Satzung', description: 'Your customers’ data will be safe and secure', href: '/verein/satzung', icon: FingerPrintIcon },
+  { name: 'Downloads', description: 'Connect with third-party tools', href: '/verein/downloads', icon: SquaresPlusIcon },
 ]
 
 const callsToAction = [
@@ -143,7 +143,7 @@ export default function Navbar() {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none">
+            <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none hover:text-red-600">
               Volleyball
               <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </Popover.Button>
@@ -178,7 +178,7 @@ export default function Navbar() {
             </Transition>
           </Popover>
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none">
+            <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none hover:text-red-600">
               Verein
               <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </Popover.Button>
@@ -214,7 +214,7 @@ export default function Navbar() {
 
 
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none">
+            <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none hover:text-red-600">
               Gymnastik
               <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </Popover.Button>
@@ -248,7 +248,7 @@ export default function Navbar() {
             </Transition>
           </Popover>
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none">
+            <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none hover:text-red-600">
               Jugend
               <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </Popover.Button>
@@ -298,9 +298,9 @@ export default function Navbar() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
+                className="h-12 w-auto"
+                src="/images/SSG_Etzbach.jpg"
+                alt="Vereinslogo"
               />
             </a>
             <button
@@ -326,7 +326,7 @@ export default function Navbar() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products, ...callsToAction].map((item) => (
+                        {products.map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"

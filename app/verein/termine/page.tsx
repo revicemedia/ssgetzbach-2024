@@ -1,28 +1,31 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
-import Timeline from "@/components/Timeline/Timeline";
 import { client } from "@/contentful"
 
 export interface Params {
   teamSlug: string;
 }
 
-async function getVorstand() {
-  // @ts-ignore
-  const res = await client.getEntries({content_type: "vereinschronik", order: "-fields.jahr"})
-
+async function getTermine() {
+  const res = await client.getEntries({content_type: "termine"})
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+ 
   return res
 }
 
 export default async function Home() {
-  const data = await getVorstand();
+  // const data = await getVorstand();
+
+  // console.log(data)
+
+
   return (
     <main>
       <Navbar />
       <div className="pt-24 bg-gray-50">
-        <SubPageHeader headline="Vereinschronik" description="Dies sind die wichtigsten Daten für unseren Verein."/>
-        <Timeline data={data}/>
+        <SubPageHeader headline="Termine" description="Alle Vereinsinternen Termine auf einen Blick."/>
       </div>
       <Footer />
     </main>

@@ -9,7 +9,6 @@ import "swiper/css/navigation";
 
 export default function HeroSwiper({slides}: any) {
 
-  console.log(slides)
   return (
     <Swiper
       spaceBetween={0}
@@ -33,6 +32,7 @@ export default function HeroSwiper({slides}: any) {
         <img
           src={item.fields.image.fields.file.url}
           className="object-cover object-center min-w-full min-h-full"
+          alt="BildSlider"
         />
       </SwiperSlide>
       ))}

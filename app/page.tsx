@@ -7,7 +7,7 @@ import { client } from "@/contentful";
 
 async function getSlideshow() {
 
-  const res = await client.getEntries({content_type: "homeSlideshow"})
+  const res = await client.getEntries({content_type: "homeSlideshow", order: "fields.positionierung"})
 
   return res
 }

@@ -6,7 +6,7 @@ import News from "@/components/News/News";
 import { client } from "@/contentful";
 
 async function getSlideshow() {
-
+// @ts-ignore
   const res = await client.getEntries({content_type: "homeSlideshow", order: "fields.positionierung"})
 
   return res

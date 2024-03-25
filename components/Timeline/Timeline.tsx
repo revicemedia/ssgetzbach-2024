@@ -1,9 +1,10 @@
+"use client"
 import { Disclosure } from '@headlessui/react'
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS, Paragraph } from '@contentful/rich-text-types';
 
-export default async function Timeline({data}: any) {
+export default function Timeline({data}: any) {
 
   const options = {
     renderNode: {

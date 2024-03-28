@@ -18,7 +18,6 @@ const products = [
   { name: '1. Damen', description: 'VVRP Rheinland-Pfalz-Liga Frauen | Staffel B', href: '/volleyball/damen-1', icon: CursorArrowRaysIcon },
   { name: '2. Damen', description: 'VVRP Rheinland-Pfalz-Liga Frauen | Staffel D', href: '/volleyball/damen-2', icon: FingerPrintIcon },
   { name: 'Hobby-Volleyballer', description: 'Keine Teilnahme am regulären Liga-Betrieb', href: '/volleyball/hobby', icon: SquaresPlusIcon },
-  { name: 'Beach', description: 'Quattro Mixed Turnier', href: '/volleyball/beach', icon: ArrowPathIcon },
 ]
 
 const verein = [

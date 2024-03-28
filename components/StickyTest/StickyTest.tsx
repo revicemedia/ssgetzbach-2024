@@ -129,8 +129,8 @@ export default function StickyTest({data}: any) {
     }
     <h3 className='pb-4 text-base font-semibold leading-7 text-darkbg'>Quicklinks:</h3>
     <div className='w-full flex gap-4'>
-        <button className='w-1/2 bg-gray-600 text-white rounded-md py-3 px-6 w-fit'>Spielplan</button>
-        <button className='w-1/2 bg-gray-600 text-white rounded-md py-3 px-6 w-fit'>Tabelle</button>
+        <button className="bg-gray-600 text-white rounded-md py-3 px-6 w-fit">Spielplan</button>
+        <button className="bg-gray-600 text-white rounded-md py-3 px-6 w-fit">Tabelle</button>
     </div>
     </div>
     </div>

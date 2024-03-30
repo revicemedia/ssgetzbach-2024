@@ -41,7 +41,7 @@ export default function Timeline({data}: any) {
                   <>
                     <dt>
                       <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-900">
-                        <span className="text-xl font-regular leading-7">{faq.fields.headline}</span>
+                        <span className="text-lg lg:text-xl font-regular leading-7">{faq.fields.headline}</span>
                         <span className="ml-6 flex h-7 items-center">
                           {open ? (
                             <MinusIcon className="h-6 w-6" aria-hidden="true" />

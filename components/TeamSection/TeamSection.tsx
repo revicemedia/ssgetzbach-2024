@@ -1,7 +1,7 @@
 "use client"
 
-import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XMarkIcon } from '@heroicons/react/20/solid'
 import StickyTest from '../StickyTest/StickyTest'
+
 export default function TeamSection({data}: any) {
 
   console.log(data)

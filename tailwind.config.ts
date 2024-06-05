@@ -9,12 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       aspectRatio: {
-        '4/3': '4 / 3',
-        '16/6': '16 / 6',
+        "4/3": "4 / 3",
+        "16/6": "16 / 6",
       },
       colors: {
-        darkbg: "#000503"
-      }
+        primary: "",
+        darkbg: "#000503",
+        error: "#e30613",
+        success: "",
+        yellow: "#ffed00",
+      },
     },
   },
   plugins: [],

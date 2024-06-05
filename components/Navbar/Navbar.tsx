@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Fragment, useState } from 'react'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import { Fragment, useState } from "react";
+import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -10,67 +10,126 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+} from "@heroicons/react/24/outline";
+import {
+  ChevronDownIcon,
+  PhoneIcon,
+  PlayCircleIcon,
+} from "@heroicons/react/20/solid";
 
 const products = [
-  { name: '1. Herren', description: 'VVRP Rheinland-Pfalz-Liga Herren | Staffel B', href: '/volleyball/herren-1', icon: ChartPieIcon },
-  { name: '1. Damen', description: 'VVRP Rheinland-Pfalz-Liga Frauen | Staffel B', href: '/volleyball/damen-1', icon: CursorArrowRaysIcon },
-  { name: '2. Damen', description: 'VVRP Rheinland-Pfalz-Liga Frauen | Staffel D', href: '/volleyball/damen-2', icon: FingerPrintIcon },
-  { name: 'Hobby-Volleyballer', description: 'Keine Teilnahme am regulären Liga-Betrieb', href: '/volleyball/hobby', icon: SquaresPlusIcon },
-]
+  {
+    name: "1. Herren",
+    description: "VVRP Rheinland-Pfalz-Liga Herren | Staffel B",
+    href: "/volleyball/herren-1",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "1. Damen",
+    description: "VVRP Rheinland-Pfalz-Liga Frauen | Staffel B",
+    href: "/volleyball/damen-1",
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "2. Damen",
+    description: "VVRP Rheinland-Pfalz-Liga Frauen | Staffel D",
+    href: "/volleyball/damen-2",
+    icon: FingerPrintIcon,
+  },
+  {
+    name: "Hobby-Volleyballer",
+    description: "Keine Teilnahme am regulären Liga-Betrieb",
+    href: "/volleyball/hobby",
+    icon: SquaresPlusIcon,
+  },
+];
 
 const verein = [
-  { name: 'News', description: 'Bezirksliga Rhein-Westerwald', href: '/verein/news', icon: ChartPieIcon },
-  { name: 'Spielberichte', description: 'Bezirksliga Rhein-Westerwald', href: '/verein/spielberichte', icon: ChartPieIcon },
-  { name: 'Chronik', description: 'Speak directly to your customers', href: '/verein/chronik', icon: CursorArrowRaysIcon },
-  { name: 'Termine', description: 'Bezirksliga Rhein-Westerwald', href: '/verein/termine', icon: ChartPieIcon },
-  { name: 'Vorstand', description: 'Bezirksliga Rhein-Westerwald', href: '/verein/vorstand', icon: ChartPieIcon },
-  { name: 'Satzung', description: 'Your customers’ data will be safe and secure', href: '/verein/satzung', icon: FingerPrintIcon },
-  { name: 'Downloads', description: 'Connect with third-party tools', href: '/verein/downloads', icon: SquaresPlusIcon },
-]
+  {
+    name: "News",
+    description: "Bezirksliga Rhein-Westerwald",
+    href: "/verein/news",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Spielberichte",
+    description: "Bezirksliga Rhein-Westerwald",
+    href: "/verein/spielberichte",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Chronik",
+    description: "Speak directly to your customers",
+    href: "/verein/chronik",
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Termine",
+    description: "Bezirksliga Rhein-Westerwald",
+    href: "/verein/termine",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Vorstand",
+    description: "Bezirksliga Rhein-Westerwald",
+    href: "/verein/vorstand",
+    icon: ChartPieIcon,
+  },
+  {
+    name: "Satzung",
+    description: "Your customers’ data will be safe and secure",
+    href: "/verein/satzung",
+    icon: FingerPrintIcon,
+  },
+  {
+    name: "Downloads",
+    description: "Connect with third-party tools",
+    href: "/verein/downloads",
+    icon: SquaresPlusIcon,
+  },
+];
 
 const gymnastik = [
-  { name: 'Gruppe 1', href: '#' },
-  { name: 'Gruppe 2', href: '#' },
-  { name: 'Senioren Gymnastik', href: '#' },
-  { name: 'Kursangebot', href: '#' },
-]
+  { name: "Gruppe 1", href: "#" },
+  { name: "Gruppe 2", href: "#" },
+  { name: "Senioren Gymnastik", href: "#" },
+  { name: "Kursangebot", href: "#" },
+];
 
 const jugend = [
-  { name: '1-2 Jahre', href: '#' },
-  { name: '3-4 Jahre', href: '#' },
-  { name: '5-6 Jahre', href: '#' },
-  { name: 'Tanzen 3-5 Jahre', href: '#' },
-  { name: 'Tanzen 6-9 Jahre', href: '#' },
-  { name: 'Ballschule', href: '#' },
-  { name: 'Volleyball-Anfänger', href: '#' },
-]
+  { name: "1-2 Jahre", href: "#" },
+  { name: "3-4 Jahre", href: "#" },
+  { name: "5-6 Jahre", href: "#" },
+  { name: "Tanzen 3-5 Jahre", href: "#" },
+  { name: "Tanzen 6-9 Jahre", href: "#" },
+  { name: "Ballschule", href: "#" },
+  { name: "Volleyball-Anfänger", href: "#" },
+];
 
 const navigation = {
   solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
+    { name: "Marketing", href: "#" },
+    { name: "Analytics", href: "#" },
+    { name: "Commerce", href: "#" },
+    { name: "Insights", href: "#" },
   ],
   support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
+    { name: "Pricing", href: "#" },
+    { name: "Documentation", href: "#" },
+    { name: "Guides", href: "#" },
+    { name: "API Status", href: "#" },
   ],
   company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: "About", href: "#" },
+    { name: "Blog", href: "#" },
+    { name: "Jobs", href: "#" },
+    { name: "Press", href: "#" },
+    { name: "Partners", href: "#" },
   ],
   legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: "Claim", href: "#" },
+    { name: "Privacy", href: "#" },
+    { name: "Terms", href: "#" },
   ],
   social: [
     // {
@@ -87,8 +146,8 @@ const navigation = {
     //   ),
     // },
     {
-      name: 'Instagram',
-      href: '#',
+      name: "Instagram",
+      href: "#",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -100,18 +159,21 @@ const navigation = {
       ),
     },
   ],
-}
+};
 
 function classNames(...classes: any) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="bg-white fixed w-full z-10 shadow-sm">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">SSG Etzbach</span>
@@ -132,7 +194,10 @@ export default function Navbar() {
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none hover:text-red-600">
               Volleyball
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
             </Popover.Button>
 
             <Transition
@@ -148,17 +213,19 @@ export default function Navbar() {
                 <div className="p-4">
                   {products.map((item) => (
                     <div
-                    key={item.name}
-                    className="group relative flex gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
-                  >
-                    <div className="flex-auto">
-                      <a href={item.href} className="block font-regular text-gray-900">
-                        {item.name}
-                        <span className="absolute inset-0" />
-                      </a>
-                      <p className="mt-1 text-gray-600 text-sm">{item.description}</p>
+                      key={item.name}
+                      className="group relative flex gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
+                    >
+                      <div className="flex-auto">
+                        <a
+                          href={item.href}
+                          className="block font-regular text-gray-900"
+                        >
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </a>
+                      </div>
                     </div>
-                  </div>
                   ))}
                 </div>
               </Popover.Panel>
@@ -167,7 +234,10 @@ export default function Navbar() {
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none hover:text-red-600">
               Verein
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
             </Popover.Button>
 
             <Transition
@@ -183,27 +253,32 @@ export default function Navbar() {
                 <div className="p-4">
                   {verein.map((item) => (
                     <div
-                    key={item.name}
-                    className="group relative flex gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
-                  >
-                    <div className="flex-auto">
-                      <a href={item.href} className="block font-regular text-gray-900">
-                        {item.name}
-                        <span className="absolute inset-0" />
-                      </a>
+                      key={item.name}
+                      className="group relative flex gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
+                    >
+                      <div className="flex-auto">
+                        <a
+                          href={item.href}
+                          className="block font-regular text-gray-900"
+                        >
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </a>
+                      </div>
                     </div>
-                  </div>
                   ))}
                 </div>
               </Popover.Panel>
             </Transition>
           </Popover>
 
-
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none hover:text-red-600">
               Gymnastik
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
             </Popover.Button>
 
             <Transition
@@ -223,7 +298,10 @@ export default function Navbar() {
                       className="group relative flex gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
                     >
                       <div className="flex-auto">
-                        <a href={item.href} className="block font-regular text-gray-900">
+                        <a
+                          href={item.href}
+                          className="block font-regular text-gray-900"
+                        >
                           {item.name}
                           <span className="absolute inset-0" />
                         </a>
@@ -237,7 +315,10 @@ export default function Navbar() {
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none hover:text-red-600">
               Jugend
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
             </Popover.Button>
 
             <Transition
@@ -257,7 +338,10 @@ export default function Navbar() {
                       className="group relative flex gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
                     >
                       <div className="flex-auto">
-                        <a href={item.href} className="block font-regular text-gray-900">
+                        <a
+                          href={item.href}
+                          className="block font-regular text-gray-900"
+                        >
                           {item.name}
                           <span className="absolute inset-0" />
                         </a>
@@ -270,15 +354,24 @@ export default function Navbar() {
           </Popover>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        {navigation.social.map((item) => (
-          <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+          {navigation.social.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-gray-500 hover:text-gray-400"
+            >
               <span className="sr-only">{item.name}</span>
-            <item.icon className="h-6 w-6" aria-hidden="true" />
-          </a>
-        ))}
+              <item.icon className="h-6 w-6" aria-hidden="true" />
+            </a>
+          ))}
         </div>
       </nav>
-      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+      <Dialog
+        as="div"
+        className="lg:hidden"
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+      >
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
@@ -308,7 +401,10 @@ export default function Navbar() {
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                         Volleyball
                         <ChevronDownIcon
-                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                          className={classNames(
+                            open ? "rotate-180" : "",
+                            "h-5 w-5 flex-none"
+                          )}
                           aria-hidden="true"
                         />
                       </Disclosure.Button>
@@ -334,7 +430,10 @@ export default function Navbar() {
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                         Verein
                         <ChevronDownIcon
-                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                          className={classNames(
+                            open ? "rotate-180" : "",
+                            "h-5 w-5 flex-none"
+                          )}
                           aria-hidden="true"
                         />
                       </Disclosure.Button>
@@ -360,7 +459,10 @@ export default function Navbar() {
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                         Gymnastik
                         <ChevronDownIcon
-                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                          className={classNames(
+                            open ? "rotate-180" : "",
+                            "h-5 w-5 flex-none"
+                          )}
                           aria-hidden="true"
                         />
                       </Disclosure.Button>
@@ -386,7 +488,10 @@ export default function Navbar() {
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                         Jugend
                         <ChevronDownIcon
-                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                          className={classNames(
+                            open ? "rotate-180" : "",
+                            "h-5 w-5 flex-none"
+                          )}
                           aria-hidden="true"
                         />
                       </Disclosure.Button>
@@ -411,5 +516,5 @@ export default function Navbar() {
         </Dialog.Panel>
       </Dialog>
     </header>
-  )
+  );
 }

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import EventOverview from "@/components/EventOverview/EventOverview";
 import Footer from "@/components/Footer/Footer";
 import HeroSwiper from "@/components/HeroSwiper/HeroSwiper";

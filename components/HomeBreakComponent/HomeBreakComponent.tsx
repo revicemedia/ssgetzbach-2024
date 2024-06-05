@@ -3,7 +3,7 @@ export default function HomeBreakComponent() {
     <div className="bg-none">
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="relative isolate overflow-hidden bg-darkbg px-6 py-24 text-center shadow-xl sm:rounded-xl sm:px-16">
-          <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-normal text-white sm:text-4xl">
             Keine Neuigkeiten mehr verpassen
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">

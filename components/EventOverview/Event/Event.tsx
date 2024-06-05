@@ -7,7 +7,7 @@ function Event({ game }: any) {
       key=""
       className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-xl bg-white text-center shadow overflow-hidden"
     >
-      <div className="flex flex-1 flex-row p-8 bg-white items-center relative overflow-hidden">
+      <div className="flex flex-1 flex-row p-8 bg-white items-center justify-center gap-8 relative overflow-hidden">
         <div
           className="absolute inset-x-0 transform-gpu overflow-hidden blur-2xl"
           aria-hidden="true"
@@ -20,17 +20,21 @@ function Event({ game }: any) {
             }}
           />
         </div>
-        <img
-          className="mx-auto h-12 w-12 sm:h-14 sm:w-14 flex-shrink-0"
-          src={game.home}
-          alt=""
-        />
+        <div className="h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center">
+          <img
+            className="h-12 w-auto sm:h-14 sm:w-auto flex-shrink-0"
+            src={game.home}
+            alt=""
+          />
+        </div>
         <p>:</p>
-        <img
-          className="mx-auto h-12 w-12 sm:h-14 sm:w-14 flex-shrink-0"
-          src={game.away}
-          alt=""
-        />
+        <div className="h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center">
+          <img
+            className="h-12 w-auto sm:h-14 sm:w-auto flex-shrink-0"
+            src={game.away}
+            alt=""
+          />
+        </div>
       </div>
       <div className="pb-6">
         <h3 className="mt-6 text-sm font-medium text-gray-900">{game.liga}</h3>

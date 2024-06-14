@@ -115,7 +115,7 @@ export default function StickyTest({ data }: any) {
                           <div className="flex w-0 flex-1">
                             <a
                               href={`mailto:${data.fields.ansprechpartner.fields.eMail}`}
-                              className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
+                              className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-regular text-gray-900"
                             >
                               <EnvelopeIcon
                                 className="h-5 w-5 text-gray-400"
@@ -129,13 +129,13 @@ export default function StickyTest({ data }: any) {
                           <div className="-ml-px flex w-0 flex-1">
                             <a
                               href={`tel:${data.fields.ansprechpartner.fields.telefon}`}
-                              className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
+                              className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-regular text-gray-900"
                             >
                               <PhoneIcon
                                 className="h-5 w-5 text-gray-400"
                                 aria-hidden="true"
                               />
-                              Anrufen
+                              Telefon
                             </a>
                           </div>
                         )}
@@ -145,17 +145,31 @@ export default function StickyTest({ data }: any) {
                 </ul>
               </>
             )}
-            <h3 className="pb-4 text-base font-semibold leading-7 text-darkbg">
-              Quicklinks:
-            </h3>
-            <div className="w-full flex gap-4">
-              <button className="bg-gray-600 text-white rounded-md py-3 px-6 w-fit">
-                Spielplan
-              </button>
-              <button className="bg-gray-600 text-white rounded-md py-3 px-6 w-fit">
-                Tabelle
-              </button>
-            </div>
+            {data.fields.tabelle && data.fields.spielplan && (
+              <>
+                <h3 className="pb-4 text-base font-semibold leading-7 text-darkbg">
+                  Quicklinks:
+                </h3>
+                <div className="w-full flex gap-4">
+                  {data.fields.spielplan && (
+                    <a
+                      href={data.fields.spielplan}
+                      className="rounded-md bg-gray-100 px-3.5 py-2.5 text-sm font-regular text-gray-900 shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    >
+                      Spielplan
+                    </a>
+                  )}
+                  {data.fields.tabelle && (
+                    <a
+                      href={data.fields.tabelle}
+                      className="rounded-md bg-gray-100 px-3.5 py-2.5 text-sm font-regular text-gray-900 shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    >
+                      Tabelle
+                    </a>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

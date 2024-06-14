@@ -30,7 +30,7 @@ export default async function Home() {
         <HeroSwiper slides={slides} />
         <EventOverview />
         <HomeBreakComponent />
-        <News />
+        <News showHeadline={true} />
       </div>
       <Footer />
     </main>

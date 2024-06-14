@@ -9,6 +9,7 @@ const posts = [
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     category: { title: "1. Herren" },
+    slug: "herren-zuhause-erfolgreich-gegen-ssvbeispielstadt",
   },
   {
     id: 2,
@@ -20,24 +21,31 @@ const posts = [
     date: "Mar 16, 2020",
     datetime: "2020-03-16",
     category: { title: "1. Herren" },
+    slug: "herren-zuhause-erfolgreich-gegen-ssvbeispielstadt",
   },
 ];
 
-export default function News() {
+type NewsProps = {
+  showHeadline: boolean;
+};
+
+export default function News({ showHeadline }: NewsProps) {
   return (
     <div className="bg-gray-50 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto text-left">
-          <h2 className="text-2xl font-regular text-gray-900 sm:text-2xl">
-            Neuigkeiten
-          </h2>
-        </div>
+        {showHeadline && (
+          <div className="mx-auto text-left">
+            <h2 className="text-2xl font-regular text-gray-900 sm:text-2xl">
+              Neuigkeiten
+            </h2>
+          </div>
+        )}
         <div className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (
             <a
               key={post.id}
               className="flex flex-col items-start justify-between"
-              href="#"
+              href={"/verein/news/" + post.slug}
             >
               <div className="relative w-full">
                 <img

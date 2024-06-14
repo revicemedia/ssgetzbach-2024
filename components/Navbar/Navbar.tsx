@@ -3,7 +3,6 @@
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
-  ArrowPathIcon,
   Bars3Icon,
   ChartPieIcon,
   CursorArrowRaysIcon,
@@ -11,11 +10,7 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const products = [
   {
@@ -147,7 +142,7 @@ const navigation = {
     // },
     {
       name: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/ssgetzbach/",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -358,6 +353,7 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
+              target="_blank"
               className="text-gray-500 hover:text-gray-400"
             >
               <span className="sr-only">{item.name}</span>

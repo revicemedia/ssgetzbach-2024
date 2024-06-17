@@ -1,18 +1,16 @@
-import Footer from "@/components/Footer/Footer";
-import Navbar from "@/components/Navbar/Navbar";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
-import { client } from "@/contentful"
+import { client } from "@/contentful";
 
 export interface Params {
   teamSlug: string;
 }
 
 async function getTermine() {
-  const res = await client.getEntries({content_type: "termine"})
+  const res = await client.getEntries({ content_type: "termine" });
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
- 
-  return res
+
+  return res;
 }
 
 export default async function Home() {
@@ -20,14 +18,12 @@ export default async function Home() {
 
   // console.log(data)
 
-
   return (
-    <main>
-      <Navbar />
-      <div className="pt-24 bg-gray-50">
-        <SubPageHeader headline="Termine" description="Alle Vereinsinternen Termine auf einen Blick."/>
-      </div>
-      <Footer />
-    </main>
+    <div className="pt-24 bg-gray-50">
+      <SubPageHeader
+        headline="Termine"
+        description="Alle Vereinsinternen Termine auf einen Blick."
+      />
+    </div>
   );
 }

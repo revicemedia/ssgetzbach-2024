@@ -18,16 +18,12 @@ export default async function Home() {
   const data = await getDownloads();
 
   return (
-    <main>
-      <Navbar />
-      <div className="pt-24 bg-gray-50">
-        <SubPageHeader
-          headline="Downloads"
-          description="Dies sind die zur Verfügung stehenden Downloads."
-        />
-        <Downloads data={data} />
-      </div>
-      <Footer />
-    </main>
+    <div className="pt-24 bg-gray-50">
+      <SubPageHeader
+        headline="Downloads"
+        description="Dies sind die zur Verfügung stehenden Downloads."
+      />
+      <Downloads data={data} />
+    </div>
   );
 }

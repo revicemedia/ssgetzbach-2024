@@ -24,15 +24,11 @@ export default async function Home() {
   console.log(slides);
 
   return (
-    <main>
-      <Navbar />
-      <div className="pt-24 bg-gray-50">
-        <HeroSwiper slides={slides} />
-        <EventOverview />
-        <HomeBreakComponent />
-        <News showHeadline={true} />
-      </div>
-      <Footer />
-    </main>
+    <div className="pt-24 bg-gray-50">
+      <HeroSwiper slides={slides} />
+      <EventOverview />
+      <HomeBreakComponent />
+      <News showHeadline={true} />
+    </div>
   );
 }

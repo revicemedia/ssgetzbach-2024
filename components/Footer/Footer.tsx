@@ -19,7 +19,7 @@ const navigation = {
     { name: "Partners", href: "#" },
   ],
   legal: [
-    { name: "Claim", href: "#" },
+    { name: "Impressum", href: "/impressum" },
     { name: "Privacy", href: "#" },
     { name: "Terms", href: "#" },
   ],

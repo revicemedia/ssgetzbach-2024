@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer/Footer";
-import Navbar from "@/components/Navbar/Navbar";
 import News from "@/components/News/News";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
 import { client } from "@/contentful";
@@ -20,16 +18,12 @@ export default async function Home() {
   console.log(data.items);
 
   return (
-    <main>
-      <Navbar />
-      <div className="pt-24 bg-gray-50">
-        <SubPageHeader
-          headline="Neuigkeiten"
-          description="Dies sind die wichtigsten Daten für unseren Verein."
-        />
-        <News showHeadline={false} />
-      </div>
-      <Footer />
-    </main>
+    <div className="pt-24 bg-gray-50">
+      <SubPageHeader
+        headline="Neuigkeiten"
+        description="Dies sind die wichtigsten Daten für unseren Verein."
+      />
+      <News showHeadline={false} />
+    </div>
   );
 }

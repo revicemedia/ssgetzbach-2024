@@ -1,9 +1,8 @@
+//@ts-nocheck
 
-import Footer from "@/components/Footer/Footer";
-import Navbar from "@/components/Navbar/Navbar";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
 import Vorstand from "@/components/Vorstand/Vorstand";
-import { client } from "@/contentful"
+import { client } from "@/contentful";
 
 export interface Params {
   teamSlug: string;
@@ -11,26 +10,28 @@ export interface Params {
 
 async function getData() {
   // @ts-ignore
-  const res = await client.getEntries({content_type: "vorstand", order: "fields.positionierung"})
+  const res = await client.getEntries({
+    content_type: "vorstand",
+    order: "fields.positionierung",
+  });
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
- 
-  return res
+
+  return res;
 }
 
 export default async function Home() {
-  const data = await getData()
+  const data = await getData();
 
-console.log(data)
+  console.log(data);
 
   return (
-    <main>
-      <Navbar />
-      <div className="pt-24 bg-gray-50">
-        <SubPageHeader headline="Vereinsvorstand" description="Diesem Bereich entnehmen Sie unsere Vorstandsmitglieder und deren Kontaktinformationen."/>
-        <Vorstand members={data}/>
-      </div>
-      <Footer />
-    </main>
+    <div className="pt-24 bg-gray-50">
+      <SubPageHeader
+        headline="Vereinsvorstand"
+        description="Diesem Bereich entnehmen Sie unsere Vorstandsmitglieder und deren Kontaktinformationen."
+      />
+      <Vorstand members={data} />
+    </div>
   );
 }

@@ -9,7 +9,6 @@ export interface Params {
 }
 
 async function getDownloads() {
-  // @ts-ignore
   const res = await client.getEntries({ content_type: "downloads" });
 
   return res;

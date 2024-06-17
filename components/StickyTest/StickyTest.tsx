@@ -145,7 +145,7 @@ export default function StickyTest({ data }: any) {
                 </ul>
               </>
             )}
-            {data.fields.tabelle && data.fields.spielplan && (
+            {(data.fields.tabelle || data.fields.spielplan) && (
               <>
                 <h3 className="pb-4 text-base font-semibold leading-7 text-darkbg">
                   Quicklinks:

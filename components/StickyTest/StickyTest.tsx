@@ -1,7 +1,44 @@
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { LinkIcon } from "@heroicons/react/24/solid";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 
 export default function StickyTest({ data }: any) {
   console.log(data);
+
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node: any, children: any) => {
+        return <p className="text-gray-700 pb-4 font-light">{children}</p>;
+      },
+      [BLOCKS.HEADING_1]: (node: any, children: any) => {
+        return (
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            {children}
+          </h1>
+        );
+      },
+      [BLOCKS.HEADING_2]: (node: any, children: any) => {
+        return (
+          <h2 className="text-red-600 pb-4 font-semibold text-lg">
+            {children}
+          </h2>
+        );
+      },
+      // [MARKS.BOLD]: (node: any, children: any) => {
+      //   return <b className="font-semibold text-gray-900">{children}</b>;
+      // },
+    },
+    renderMark: {
+      [MARKS.BOLD]: (text: any) => {
+        return (
+          <b className="font-semibold text-gray-900" key={`${text}-key`}>
+            {text}
+          </b>
+        );
+      },
+    },
+  };
 
   return (
     <div className="relative isolate overflow-hidden px-6 py-24 sm:py-24 lg:overflow-visible lg:px-0 lg:max-w-7xl mx-auto">
@@ -9,45 +46,10 @@ export default function StickyTest({ data }: any) {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 overflow-hidden">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-red-600">
-                Saison 2023 / 2024
-              </p>
-              <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                {data.fields.teamName}
-              </h1>
-              <div className="max-w-full text-base leading-7 text-gray-700 lg:max-w-full pt-4">
-                <p>Auf dem Foto von links nach rechts:</p>
-                <ul role="list" className="mt-4 space-y-8 text-gray-600">
-                  <li className="flex gap-x-3">
-                    <span>
-                      <strong className="font-semibold text-gray-900">
-                        Hinten:
-                      </strong>{" "}
-                      Physio Manuela Semmelrogge, Jasmin Tjart (7), Olga Hombach
-                      (9), Janina Gerhards (3), Veronika Schwarz (1), Jana
-                      Birkhölzer (11), Anna Birkhölzer, Trainer Hans-Jürgen
-                      Schröder
-                    </span>
-                  </li>
-                  <li className="flex gap-x-3">
-                    <span>
-                      <strong className="font-semibold text-gray-900">
-                        Vorne:
-                      </strong>{" "}
-                      Rebecca Jung (2), Melissa Hess (6), Libera Katja Gerhards
-                      (14), Jennifer Neufeld (13)
-                    </span>
-                  </li>
-                  <li className="flex gap-x-3">
-                    <span>
-                      <strong className="font-semibold text-gray-900">
-                        Spielbereich:
-                      </strong>{" "}
-                      VVRP Rheinland-Pfalz-Liga Frauen | Staffel B
-                    </span>
-                  </li>
-                </ul>
-              </div>
+              {documentToReactComponents(
+                data.fields.mannschaftsdetails,
+                options
+              )}
             </div>
           </div>
         </div>
@@ -115,10 +117,10 @@ export default function StickyTest({ data }: any) {
                           <div className="flex w-0 flex-1">
                             <a
                               href={`mailto:${data.fields.ansprechpartner.fields.eMail}`}
-                              className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-regular text-gray-900"
+                              className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-2 rounded-bl-lg border border-transparent py-4 text-sm font-regular text-gray-900 hover:bg-gray-50"
                             >
                               <EnvelopeIcon
-                                className="h-5 w-5 text-gray-400"
+                                className="h-5 w-5 text-gray-900"
                                 aria-hidden="true"
                               />
                               E-Mail
@@ -129,10 +131,10 @@ export default function StickyTest({ data }: any) {
                           <div className="-ml-px flex w-0 flex-1">
                             <a
                               href={`tel:${data.fields.ansprechpartner.fields.telefon}`}
-                              className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-regular text-gray-900"
+                              className="relative inline-flex w-0 flex-1 items-center justify-center gap-2 rounded-br-lg border border-transparent py-4 text-sm font-regular text-gray-900"
                             >
                               <PhoneIcon
-                                className="h-5 w-5 text-gray-400"
+                                className="h-5 w-5 text-gray-900"
                                 aria-hidden="true"
                               />
                               Telefon
@@ -154,16 +156,24 @@ export default function StickyTest({ data }: any) {
                   {data.fields.spielplan && (
                     <a
                       href={data.fields.spielplan}
-                      className="rounded-md bg-gray-100 px-3.5 py-2.5 text-sm font-regular text-gray-900 shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                      className="rounded-md bg-gray-100 flex gap-2 items-center justify-center px-3.5 py-2.5 text-sm font-regular text-gray-900 shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                     >
+                      <LinkIcon
+                        className="h-4 w-4 text-gray-900"
+                        aria-hidden="true"
+                      />
                       Spielplan
                     </a>
                   )}
                   {data.fields.tabelle && (
                     <a
                       href={data.fields.tabelle}
-                      className="rounded-md bg-gray-100 px-3.5 py-2.5 text-sm font-regular text-gray-900 shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                      className="rounded-md bg-gray-100 flex gap-2 items-center justify-center px-3.5 py-2.5 text-sm font-regular text-gray-900 shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                     >
+                      <LinkIcon
+                        className="h-4 w-4 text-gray-900"
+                        aria-hidden="true"
+                      />
                       Tabelle
                     </a>
                   )}

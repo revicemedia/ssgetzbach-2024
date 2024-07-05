@@ -1,10 +1,8 @@
 // @ts-nocheck
 
 import EventOverview from "@/components/EventOverview/EventOverview";
-import Footer from "@/components/Footer/Footer";
 import HeroSwiper from "@/components/HeroSwiper/HeroSwiper";
 import HomeBreakComponent from "@/components/HomeBreakComponent/HomeBreakComponent";
-import Navbar from "@/components/Navbar/Navbar";
 import News from "@/components/News/News";
 import { client } from "@/contentful";
 

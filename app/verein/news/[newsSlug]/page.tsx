@@ -1,3 +1,6 @@
+// @ts-nocheck
+
+import NewsDisplay from "@/components/NewsDisplay/NewsDisplay";
 import { client } from "@/contentful";
 
 interface Params {
@@ -6,20 +9,23 @@ interface Params {
   };
 }
 
-async function getNews() {
-  const res = await client.getEntries({ content_type: "news" });
+async function getNews({ newsSlug }: any) {
+  const res = await client.getEntry({
+    "fields.domainSlug": newsSlug,
+  });
 
   return res;
 }
 
 export default async function Home({ params }: Params) {
-  const data = await getNews();
-  console.log(params);
+  const data = await getNews(params.newsSlug);
+
+  console.log(data);
 
   return (
     <div className="pt-24 bg-gray-50">
       <h2>Unterseite für News</h2>
-      <p>{params.newsSlug}</p>
+      <NewsDisplay data={data} />
     </div>
   );
 }

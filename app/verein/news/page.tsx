@@ -1,4 +1,3 @@
-import News from "@/components/News/StartNews";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
 import { client } from "@/contentful";
 
@@ -23,7 +22,6 @@ export default async function Home() {
         headline="Neuigkeiten"
         description="Dies sind die wichtigsten Daten für unseren Verein."
       />
-      <News showHeadline={false} />
     </div>
   );
 }

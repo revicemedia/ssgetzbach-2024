@@ -3,7 +3,7 @@
 import EventOverview from "@/components/EventOverview/EventOverview";
 import HeroSwiper from "@/components/HeroSwiper/HeroSwiper";
 import HomeBreakComponent from "@/components/HomeBreakComponent/HomeBreakComponent";
-import News from "@/components/News/News";
+import StartNews from "@/components/News/StartNews";
 import { client } from "@/contentful";
 
 async function getSlideshow() {
@@ -16,17 +16,38 @@ async function getSlideshow() {
   return res;
 }
 
+async function getHomeEvents() {
+  // @ts-ignore
+  const res = await client.getEntries({
+    content_type: "homeSpiele",
+    order: "fields.fullDate",
+  });
+
+  return res;
+}
+
+async function getHomeNews() {
+  // @ts-ignore
+  const res = await client.getEntries({
+    content_type: "newsDisplayStartseite",
+  });
+
+  return res;
+}
+
 export default async function Home() {
   const slides = await getSlideshow();
+  const news = await getHomeNews();
+  const events = await getHomeEvents();
 
-  console.log(slides);
+  const filteredNews = news.items[0].fields.verlinkteNews;
 
   return (
     <div className="pt-24 bg-gray-50">
       <HeroSwiper slides={slides} />
-      <EventOverview />
+      <EventOverview data={events} />
       <HomeBreakComponent />
-      <News showHeadline={true} />
+      <StartNews showHeadline={true} data={filteredNews} />
     </div>
   );
 }

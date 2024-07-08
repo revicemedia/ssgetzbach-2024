@@ -3,7 +3,7 @@ import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
 import { client } from "@/contentful";
 
 export interface Params {
-  teamSlug: string;
+  spielberichtSlug: string;
 }
 
 async function getSpielberichte() {

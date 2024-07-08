@@ -24,7 +24,9 @@ const games = [
   },
 ];
 
-export default function EventOverview() {
+export default function EventOverview({ data }: any) {
+  const cleanData = data.items;
+
   return (
     <div className="bg-gray-50 mx-auto max-w-7xl py-24 sm:py-32 px-6 lg:px-8">
       <div className="mx-auto text-left">
@@ -36,7 +38,7 @@ export default function EventOverview() {
         role="list"
         className="grid mt-8 max-w-7xl m-auto grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
       >
-        {games.map((game) => (
+        {cleanData.map((game: any) => (
           // <li
           //   key={game.day}
           //   className="col-span-1 divide-y rounded-xl divide-primary-delay/90 bg-white shadow overflow-hidden"

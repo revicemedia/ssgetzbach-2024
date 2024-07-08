@@ -22,7 +22,7 @@ function Event({ game }: any) {
         <div className="h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center">
           <img
             className="h-12 w-auto sm:h-14 sm:w-auto flex-shrink-0"
-            src={game.home}
+            src={game.fields.homeTeam.fields.file.url}
             alt=""
           />
         </div>
@@ -30,16 +30,22 @@ function Event({ game }: any) {
         <div className="h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center">
           <img
             className="h-12 w-auto sm:h-14 sm:w-auto flex-shrink-0"
-            src={game.away}
+            src={game.fields.visitingTeam.fields.file.url}
             alt=""
           />
         </div>
       </div>
       <div className="pb-6">
-        <h3 className="mt-6 text-sm font-medium text-gray-900">{game.liga}</h3>
+        <h3 className="mt-6 text-sm font-medium text-gray-900">
+          {game.fields.mannschaft}
+        </h3>
         <dl className="mt-1 flex flex-grow flex-col justify-between">
           <dd className="text-sm text-gray-500">
-            {game.day + " - " + game.time}
+            {game.fields.day +
+              ". " +
+              game.fields.monthYear +
+              " - " +
+              game.fields.time}
           </dd>
         </dl>
       </div>

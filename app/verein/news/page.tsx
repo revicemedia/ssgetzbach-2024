@@ -1,4 +1,4 @@
-import News from "@/components/News/News";
+import News from "@/components/News/StartNews";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
 import { client } from "@/contentful";
 

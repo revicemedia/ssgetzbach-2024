@@ -20,8 +20,8 @@ const navigation = {
   ],
   legal: [
     { name: "Impressum", href: "/impressum" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: "Datenschutz", href: "/datenschutz" },
+    { name: "Cookies", href: "/cookies" },
   ],
   social: [
     {

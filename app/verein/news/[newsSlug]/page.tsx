@@ -26,10 +26,6 @@ export default async function Home({ params }: Params) {
     return element.fields.domainSlug === newsSlug;
   });
 
-  // const data = await getNews(newsSlug);
-
-  console.log(data);
-
   return (
     <div className="pt-24 bg-gray-50">
       <NewsBerichteDetails data={filteredData} />

@@ -37,7 +37,7 @@ export default function StartNews({ showHeadline, data }: any) {
             <a
               key={item.fields.domainSlug}
               href={
-                item.sys.contentType.sys.id === "spielbeichte"
+                item.sys.contentType.sys.id === "spielberichte"
                   ? `/verein/spielberichte/${item.fields.domainSlug}`
                   : `/verein/news/${item.fields.domainSlug}`
               }

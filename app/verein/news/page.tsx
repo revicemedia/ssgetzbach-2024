@@ -14,7 +14,7 @@ async function getNews() {
 export default async function Home() {
   const data = await getNews();
 
-  console.log(data.items);
+  console.log(data);
 
   return (
     <div className="pt-24 bg-gray-50">

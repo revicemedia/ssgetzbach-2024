@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import NewsDisplay from "@/components/NewsDisplay/NewsDisplay";
+import NewsBerichteDetails from "@/components/NewsBerichteDetails/NewsBerichteDetails";
 import { client } from "@/contentful";
 
 interface Params {
@@ -9,23 +9,30 @@ interface Params {
   };
 }
 
-async function getNews({ newsSlug }: any) {
-  const res = await client.getEntry({
-    "fields.domainSlug": newsSlug,
+async function getNews({ newsSlug }: string) {
+  const res = await client.getEntries({
+    content_type: "news",
   });
 
   return res;
 }
 
 export default async function Home({ params }: Params) {
-  const data = await getNews(params.newsSlug);
+  const { newsSlug } = params;
+
+  const data = await getNews(newsSlug);
+
+  const filteredData = data.items.find((element) => {
+    return element.fields.domainSlug === newsSlug;
+  });
+
+  // const data = await getNews(newsSlug);
 
   console.log(data);
 
   return (
     <div className="pt-24 bg-gray-50">
-      <h2>Unterseite für News</h2>
-      <NewsDisplay data={data} />
+      <NewsBerichteDetails data={filteredData} />
     </div>
   );
 }

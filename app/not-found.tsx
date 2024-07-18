@@ -9,11 +9,9 @@ import { client } from "@/contentful";
 export default async function Home() {
   return (
     <main>
-      <Navbar />
       <div className="w-full pt-24 bg-gray-50">
         <NotFound />
       </div>
-      <Footer />
     </main>
   );
 }

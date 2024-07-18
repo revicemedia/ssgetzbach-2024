@@ -1,23 +1,36 @@
+// @ts-nocheck
+
+import NewsBerichteDetails from "@/components/NewsBerichteDetails/NewsBerichteDetails";
 import { client } from "@/contentful";
 
-export interface Params {
-  teamSlug: string;
+interface Params {
+  params: {
+    spielberichtSlug: string;
+  };
 }
 
-async function getSpielbericht() {
-  const res = await client.getEntries({ content_type: "news" });
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+async function getSpielberichte({ newsSlug }: string) {
+  const res = await client.getEntries({
+    content_type: "spielberichte",
+  });
 
   return res;
 }
 
-export default async function Home() {
-  const data = await getSpielbericht();
+export default async function Home({ params }: Params) {
+  const { spielberichtSlug } = params;
+
+  console.log(spielberichtSlug);
+
+  const data = await getSpielberichte(spielberichtSlug);
+
+  const filteredData = data.items.find((element) => {
+    return element.fields.domainSlug === spielberichtSlug;
+  });
 
   return (
     <div className="pt-24 bg-gray-50">
-      <h2>Unterseite für Spielberichte</h2>
+      <NewsBerichteDetails data={filteredData} />
     </div>
   );
 }

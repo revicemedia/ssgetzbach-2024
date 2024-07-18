@@ -72,12 +72,6 @@ const verein = [
     icon: ChartPieIcon,
   },
   {
-    name: "Satzung",
-    description: "Your customers’ data will be safe and secure",
-    href: "/verein/satzung",
-    icon: FingerPrintIcon,
-  },
-  {
     name: "Downloads",
     description: "Connect with third-party tools",
     href: "/verein/downloads",
@@ -86,10 +80,10 @@ const verein = [
 ];
 
 const gymnastik = [
-  { name: "Gruppe 1", href: "#" },
-  { name: "Gruppe 2", href: "#" },
-  { name: "Senioren Gymnastik", href: "#" },
-  { name: "Kursangebot", href: "#" },
+  { name: "Gruppe 1", href: "/gymnastik/gruppe-1" },
+  { name: "Gruppe 2", href: "/gymnastik/gruppe-2" },
+  { name: "Senioren Gymnastik", href: "/gymnastik/senioren" },
+  { name: "Kursangebot", href: "/gymnastik/kursangebot" },
 ];
 
 const jugend = [

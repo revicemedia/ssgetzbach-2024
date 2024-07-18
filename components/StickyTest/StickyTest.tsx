@@ -88,7 +88,7 @@ export default function StickyTest({ data }: any) {
                 <h3 className="pb-4 text-base font-semibold leading-7 text-darkbg">
                   Kontakt:
                 </h3>
-                <ul role="list" className="grid grid-cols-1 gap-6 pb-8">
+                <ul role="list" className="grid grid-cols-1 gap-6">
                   <li
                     key={data.fields.ansprechpartner.fields.name}
                     className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow"
@@ -149,7 +149,7 @@ export default function StickyTest({ data }: any) {
             )}
             {(data.fields.tabelle || data.fields.spielplan) && (
               <>
-                <h3 className="pb-4 text-base font-semibold leading-7 text-darkbg">
+                <h3 className="pb-4 pt-8 text-base font-semibold leading-7 text-darkbg">
                   Quicklinks:
                 </h3>
                 <div className="w-full flex gap-4">

@@ -1,11 +1,7 @@
-"use client";
-
 import EventItem from "./EventItem/EventItem";
 
 export default function EventPage({ data }: any) {
   const cleanData = data.items;
-
-  console.log(cleanData);
 
   return (
     <div className="bg-gray-50 mx-auto max-w-7xl py-24 sm:py-32 px-6 lg:px-8">

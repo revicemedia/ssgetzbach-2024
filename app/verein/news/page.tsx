@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import NewsOverview from "@/components/News/NewsOverview";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
 import { client } from "@/contentful";

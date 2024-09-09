@@ -1,3 +1,4 @@
+import NewsOverview from "@/components/News/NewsOverview";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
 import { client } from "@/contentful";
 
@@ -6,13 +7,18 @@ export interface Params {
 }
 
 async function getNews() {
-  const res = await client.getEntries({ content_type: "news" });
+  const res = await client.getEntries({
+    content_type: "news",
+    order: "-sys.createdAt",
+  });
 
   return res;
 }
 
 export default async function Home() {
   const data = await getNews();
+
+  const filteredNews = data.items;
 
   console.log(data);
 
@@ -22,6 +28,7 @@ export default async function Home() {
         headline="Neuigkeiten"
         description="Dies sind die wichtigsten Daten für unseren Verein."
       />
+      <NewsOverview data={filteredNews} showHeadline={false} />
     </div>
   );
 }

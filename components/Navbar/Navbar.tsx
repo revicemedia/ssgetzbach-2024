@@ -83,44 +83,20 @@ const gymnastik = [
   { name: "Gruppe 1", href: "/gymnastik/gruppe-1" },
   { name: "Gruppe 2", href: "/gymnastik/gruppe-2" },
   { name: "Senioren Gymnastik", href: "/gymnastik/senioren" },
-  { name: "Kursangebot", href: "/gymnastik/kursangebot" },
+  // { name: "Kursangebot", href: "/gymnastik/kursangebot" },
 ];
 
 const jugend = [
-  { name: "1-2 Jahre", href: "#" },
-  { name: "3-4 Jahre", href: "#" },
-  { name: "5-6 Jahre", href: "#" },
-  { name: "Tanzen 3-5 Jahre", href: "#" },
-  { name: "Tanzen 6-9 Jahre", href: "#" },
-  { name: "Ballschule", href: "#" },
-  { name: "Volleyball-Anfänger", href: "#" },
+  { name: "1-2 Jahre", href: "/jugend/jugend-1-2" },
+  { name: "3-4 Jahre", href: "/jugend/jugend-3-4" },
+  { name: "5-6 Jahre", href: "/jugend/jugend-5-6" },
+  { name: "Tanzen 3-5 Jahre", href: "/jugend/tanzen-3-5" },
+  { name: "Tanzen 6-9 Jahre", href: "/jugend/tanzen-6-9" },
+  { name: "Ballschule", href: "/jugend/ballschule" },
+  { name: "Volleyball-Anfänger", href: "/jugend/volleyball-anfaenger" },
 ];
 
 const navigation = {
-  solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
-  ],
-  support: [
-    { name: "Pricing", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "API Status", href: "#" },
-  ],
-  company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Partners", href: "#" },
-  ],
-  legal: [
-    { name: "Claim", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-  ],
   social: [
     // {
     //   name: 'Facebook',
@@ -355,7 +331,7 @@ export default function Navbar() {
               key={item.name}
               href={item.href}
               target="_blank"
-              className="text-gray-500 hover:text-gray-400"
+              className="text-gray-500 hover:text-error"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />

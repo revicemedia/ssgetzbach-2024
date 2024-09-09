@@ -1,3 +1,4 @@
+import EventPage from "@/components/EventsPage/EventPage";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
 import { client } from "@/contentful";
 
@@ -14,7 +15,7 @@ async function getTermine() {
 }
 
 export default async function Home() {
-  // const data = await getVorstand();
+  const data = await getTermine();
 
   // console.log(data)
 
@@ -24,6 +25,7 @@ export default async function Home() {
         headline="Termine"
         description="Alle Vereinsinternen Termine auf einen Blick."
       />
+      <EventPage data={data} />
     </div>
   );
 }

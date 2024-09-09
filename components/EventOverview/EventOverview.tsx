@@ -1,29 +1,5 @@
 import Event from "./Event/Event";
 
-const games = [
-  {
-    home: "/images/SSG_Etzbach.jpg",
-    away: "/images/logo100.png",
-    day: "20.07.2023",
-    time: "17:30 Uhr",
-    liga: "Bezirksliga Herren",
-  },
-  {
-    home: "/images/logo100.png",
-    away: "/images/SSG_Etzbach.jpg",
-    day: "22.07.2023",
-    time: "17:30 Uhr",
-    liga: "Bezirksliga Herren",
-  },
-  {
-    home: "/images/SSG_Etzbach.jpg",
-    away: "/images/logo100.png",
-    day: "23.07.2023",
-    time: "17:30 Uhr",
-    liga: "Bezirksliga Herren",
-  },
-];
-
 export default function EventOverview({ data }: any) {
   const cleanData = data.items;
 

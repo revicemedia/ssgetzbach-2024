@@ -1,3 +1,5 @@
+"use client";
+
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { redirect } from "next/navigation";
@@ -48,6 +50,8 @@ export default async function NewsBerichteDetails({ data }: any) {
     redirect("/notfound");
   }
 
+  console.log(data);
+
   return (
     <div className="px-6 py-20 lg:py-32 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
@@ -57,11 +61,22 @@ export default async function NewsBerichteDetails({ data }: any) {
         </h1>
         <img
           alt={data.fields.headline}
-          src={data.fields.image.fields.file.url}
+          src={
+            (data.fields.image && data.fields.image.fields.file.url) ||
+            "/images/volleyball.jpg"
+          }
           className="aspect-video w-full rounded-xl bg-gray-50 object-cover mt-12"
         />
+        {data.fields.inhalt ? (
+          <div className="mt-8 lg:mt-12 lg:px-4">
+            {documentToReactComponents(data.fields.inhalt, options)}
+          </div>
+        ) : (
+          <div className="mt-8 lg:mt-12 lg:px-4">
+            <p className="text-darkbg pb-4 font-light">{data.fields.text}</p>
+          </div>
+        )}
       </div>
-      {/* {documentToReactComponents(data.fields.text, options)} */}
     </div>
   );
 }

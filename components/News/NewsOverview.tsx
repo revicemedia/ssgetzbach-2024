@@ -19,7 +19,7 @@ type DataItem = {
   };
 };
 
-export default function StartNews({ showHeadline, data }: NewsProps) {
+export default function NewsOverview({ showHeadline, data }: NewsProps) {
   return (
     <div className="bg-gray-50 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -39,7 +39,7 @@ export default function StartNews({ showHeadline, data }: NewsProps) {
                   ? `/verein/spielberichte/${item.fields.domainSlug}`
                   : `/verein/news/${item.fields.domainSlug}`
               }
-              className="flex flex-col items-start justify-between"
+              className="group flex flex-col items-start justify-between"
             >
               <div className="relative w-full">
                 <img
@@ -48,7 +48,7 @@ export default function StartNews({ showHeadline, data }: NewsProps) {
                     "/images/volleyball.jpg"
                   }
                   alt=""
-                  className="aspect-[16/9] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                  className="aspect-[16/9] w-full rounded-xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] group-hover:grayscale"
                 />
               </div>
               <div className="max-w-xl">
@@ -56,20 +56,22 @@ export default function StartNews({ showHeadline, data }: NewsProps) {
                   <time dateTime="" className="text-gray-500">
                     {item.fields.date}
                   </time>
-                  <div className="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                  <div className="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 group-hover:bg-gray-100">
                     {item.fields.author}
                   </div>
                 </div>
                 <div className="group relative">
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                  <h3 className="mt-2 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                     <div>
                       <span className="absolute inset-0" />
                       {item.fields.headline}
                     </div>
                   </h3>
-                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    {item.fields.previewText}
-                  </p>
+                  {/* {item.fields.previewText && (
+                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                      {item.fields.previewText}
+                    </p>
+                  )} */}
                 </div>
               </div>
             </a>

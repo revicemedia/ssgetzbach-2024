@@ -28,7 +28,7 @@ export default async function Home() {
     <div className="pt-24 bg-gray-50">
       <SubPageHeader
         headline="Neuigkeiten"
-        description="Dies sind die wichtigsten Daten für unseren Verein."
+        description="Alle Neuigkeiten des Vereins auf einen Blick."
       />
       <NewsOverview data={filteredNews} showHeadline={false} />
     </div>

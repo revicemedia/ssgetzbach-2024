@@ -23,7 +23,7 @@ export default async function Home() {
     <div className="pt-24 bg-gray-50">
       <SubPageHeader
         headline="Termine"
-        description="Alle Vereinsinternen Termine auf einen Blick."
+        description="Alle vereinsinternen Termine auf einen Blick."
       />
       <EventPage data={data} />
     </div>

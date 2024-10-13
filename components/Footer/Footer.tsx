@@ -1,22 +1,19 @@
 const navigation = {
   solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
+    { name: "1. Herren", href: "/volleyball/herren-1" },
+    { name: "1. Damen", href: "/volleyball/damen-1" },
+    { name: "2. Damen", href: "/volleyball/damen-2" },
+    { name: "Hobby", href: "/volleyball/hobby" },
   ],
   support: [
-    { name: "Pricing", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "API Status", href: "#" },
+    { name: "Chronik", href: "/verein/chronik" },
+    { name: "Vorstand", href: "/verein/vorstand" },
+    { name: "Termine", href: "/verein/termine" },
   ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Partners", href: "#" },
+    { name: "News", href: "/verein/news" },
+    { name: "Spielberichte", href: "/verein/spielberichte" },
+    { name: "Downloads", href: "/verein/downloads" },
   ],
   legal: [
     { name: "Impressum", href: "/impressum" },
@@ -87,7 +84,7 @@ export default function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white">
-                  Test
+                  Volleyball
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
@@ -104,7 +101,7 @@ export default function Footer() {
               </div>
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">
-                  Support
+                  Verein
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.support.map((item) => (
@@ -123,7 +120,7 @@ export default function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white">
-                  Company
+                  Quicklinks
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
@@ -160,7 +157,14 @@ export default function Footer() {
         </div>
         <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
           <p className="text-xs leading-5 text-gray-400">
-            &copy; 2024 SSG Etzbach
+            &copy; 2024 SSG Etzbach - Powered by{" "}
+            <a
+              href="https://www.revice-media.com"
+              target="_blank"
+              className="text-yellow"
+            >
+              Revice Media
+            </a>
           </p>
         </div>
       </div>

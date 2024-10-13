@@ -2,7 +2,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { redirect } from "next/navigation";
 
-export default async function NewsBerichteDetails({ data }: any) {
+export default async function SpielberichteDetails({ data }: any) {
   const options = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node: any, children: any) => {
@@ -65,9 +65,9 @@ export default async function NewsBerichteDetails({ data }: any) {
           }
           className="aspect-video w-full rounded-xl bg-gray-50 object-cover mt-12"
         />
-        {data.fields.inhalt ? (
+        {data.fields.text ? (
           <div className="mt-8 lg:mt-12 lg:px-4">
-            {documentToReactComponents(data.fields.inhalt, options)}
+            {documentToReactComponents(data.fields.text, options)}
           </div>
         ) : (
           <div className="mt-8 lg:mt-12 lg:px-4">

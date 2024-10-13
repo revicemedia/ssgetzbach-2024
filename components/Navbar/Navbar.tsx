@@ -141,14 +141,14 @@ export default function Navbar() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <a href="/" className="">
             <span className="sr-only">SSG Etzbach</span>
             <Image
               className="h-12 w-auto"
               src="/images/SSG_Etzbach.png"
               alt="Vereinslogo"
-              width={100}
-              height={100}
+              width={48}
+              height={48}
             />
           </a>
         </div>
@@ -348,14 +348,14 @@ export default function Navbar() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5 focus-visible:outline-none">
+            <a href="/" className="focus-visible:outline-none">
               <span className="sr-only">SSG Etzbach</span>
               <Image
                 className="h-12 w-auto"
                 src="/images/SSG_Etzbach.png"
                 alt="Vereinslogo"
-                width={100}
-                height={100}
+                width={48}
+                height={48}
               />
             </a>
             <button

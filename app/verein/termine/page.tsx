@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import EventPage from "@/components/EventsPage/EventPage";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
 import { client } from "@/contentful";
@@ -7,7 +9,10 @@ export interface Params {
 }
 
 async function getTermine() {
-  const res = await client.getEntries({ content_type: "termine" });
+  const res = await client.getEntries({
+    content_type: "termine",
+    order: "fields.datumUhrzeit",
+  });
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
@@ -16,6 +21,8 @@ async function getTermine() {
 
 export default async function Home() {
   const data = await getTermine();
+
+  console.log(data.items);
 
   // console.log(data)
 

@@ -1,90 +1,66 @@
 import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  LockClosedIcon,
   InformationCircleIcon,
   UserCircleIcon,
   AtSymbolIcon,
+  CloudIcon,
   LinkIcon,
   LockOpenIcon,
 } from "@heroicons/react/20/solid";
 
 const features = [
   {
-    name: "Angaben gemäß § 5 TMG",
+    name: "Was sind Cookies?",
     description: [
       {
         id: 1,
-        text: "Spiel- und Sportgemeinschaft Etzbach e.V.",
-        type: "Text",
-      },
-      { id: 2, text: "Drosselweg 9", type: "Text" },
-      { id: 3, text: "57539 Etzbach", type: "Text" },
-      { id: 4, text: "Vereinsregister: VR10252", type: "Text" },
-      { id: 5, text: "Registergericht: Amtsgericht Montabaur", type: "Text" },
-    ],
-    icon: InformationCircleIcon,
-  },
-  {
-    name: "Kontakt",
-    description: [
-      { id: 1, text: "E-Mail:", type: "Text" },
-      { id: 1, text: "ssg-etzbach@web.de", type: "Mail" },
-      {
-        id: 3,
-        text: "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
-        type: "Text",
-      },
-    ],
-    icon: AtSymbolIcon,
-  },
-  {
-    name: "Vertreten durch den Vorstand:",
-    description: [
-      { id: 1, text: "Julian Schröder", type: "Text" },
-      { id: 2, text: "Sarah Gerhards", type: "Text" },
-      { id: 3, text: "Janina Pattberg", type: "Text" },
-      { id: 4, text: "Rolf Grün", type: "Text" },
-    ],
-    icon: UserCircleIcon,
-  },
-  {
-    name: "Haftung für Inhalte",
-    description: [
-      {
-        id: 1,
-        text: "Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.",
-        type: "Text",
-      },
-    ],
-    icon: LinkIcon,
-  },
-  {
-    name: "Haftung für Links",
-    description: [
-      {
-        id: 1,
-        text: "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.",
-        type: "Text",
-      },
-    ],
-    icon: LinkIcon,
-  },
-  {
-    name: "Urheberrecht",
-    description: [
-      {
-        id: 1,
-        text: "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.",
+        text: "Wir kennen „Cookies“ (dt. „Plätzchen“) vor allem als Datenpakete, die von Webbrowsern und Internetseiten erzeugt werden, um individuelle Nutzerdaten zu speichern. Ursprünglich waren sie unter dem Namen Magic Cookies bekannt: Der Begriff bezeichnet sämtliche generischen Datenpakete, die zwischen Computer-Applikationen ausgetauscht werden. Mit dem Internet kamen schließlich in Form von HTTP-Cookies jene Datenpakete hinzu, mithilfe derer Webanwendungen personenbezogene Daten sammeln, um beispielsweise Login-Daten, Surfverhalten, Einstellungen und Aktionen in Webapplikationen (wie den „Warenkörben“ in Onlineshops) zu speichern.",
         type: "Text",
       },
       {
         id: 2,
-        text: "Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.",
+        text: "Grob zusammengefasst: Eine Website erkennt anhand des Cookies, wer sie gerade besucht, und kann sich dadurch in gewissem Rahmen an die Nutzerbedürfnisse anpassen. Die Datenspeicherung durch Cookies hat also durchaus einen spürbaren Effekt auf den User – zudem spielen Cookies inzwischen auch im Online-Marketing eine wichtige Rolle.",
         type: "Text",
       },
     ],
-    icon: LockOpenIcon,
+    icon: InformationCircleIcon,
+  },
+  {
+    name: "Verwenden wir Cookies?",
+    description: [
+      {
+        id: 1,
+        text: "Wir verzichten ausdrücklich auf das Erheben & Speichern personenbezogener Daten & nutzen aus diesem Grund auch keine Cookies. Unser Hosting-Anbieter Vercel nutzt funktionelle Cookies, um die korrekte Anzeige der Webseite zu gewährleisten. Diese Cookies sind unbedingt erforderlich.",
+        type: "Text",
+      },
+    ],
+    icon: UserCircleIcon,
+  },
+  // {
+  //   name: "Nutzt unser Hosting-Anbieter Cookies?",
+  //   description: [
+  //     {
+  //       id: 1,
+  //       text: "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.",
+  //       type: "Text",
+  //     },
+  //   ],
+  //   icon: CloudIcon,
+  // },
+  {
+    name: "Weitere Informationen zu Cookies",
+    description: [
+      {
+        id: 1,
+        text: "Weitere Informationen zu Cookies findest du unter:",
+        type: "Text",
+      },
+      {
+        id: 2,
+        text: "https://www.ionos.de/digitalguide/hosting/hosting-technik/was-sind-cookies/",
+        type: "Link",
+      },
+    ],
+    icon: LinkIcon,
   },
 ];
 
@@ -94,7 +70,7 @@ export default function Cookies() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto text-left">
           <h2 className="text-2xl font-regular text-gray-900 sm:text-2xl">
-            Impressum
+            Cookies
           </h2>
         </div>
         <div className="mx-auto mt-12 max-w-2xl sm:mt-12 lg:max-w-none">
@@ -109,11 +85,17 @@ export default function Cookies() {
                   {feature.name}
                 </dt>
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 self-start">
-                  {feature.description.map((item) => (
-                    <p className="flex-auto" key={item.id}>
-                      {item.text}
-                    </p>
-                  ))}
+                  {feature.description.map((item) =>
+                    item.type === "Link" ? (
+                      <a href={item.text} className="text-error" key={item.id}>
+                        {item.text}
+                      </a>
+                    ) : (
+                      <p className="flex-auto" key={item.id}>
+                        {item.text}
+                      </p>
+                    )
+                  )}
                 </dd>
               </div>
             ))}

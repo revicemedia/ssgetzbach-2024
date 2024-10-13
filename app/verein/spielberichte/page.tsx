@@ -7,7 +7,7 @@ export interface Params {
 }
 
 async function getSpielberichte() {
-  const res = await client.getEntries({ content_type: "news" });
+  const res = await client.getEntries({ content_type: "spielberichte" });
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
@@ -23,7 +23,7 @@ export default async function Home() {
         headline="Spielberichte"
         description="Alle Spielberichte im Überblick."
       />
-      <Spielberichte />
+      <Spielberichte data={data} />
     </div>
   );
 }

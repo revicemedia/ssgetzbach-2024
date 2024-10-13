@@ -1,5 +1,5 @@
 // @ts-nocheck
-"use client";
+
 import SpielberichteDetails from "@/components/SpielberichteDetails/SpielberichteDetails";
 import { client } from "@/contentful";
 
@@ -25,8 +25,6 @@ export default async function Home({ params }: Params) {
   const filteredData = data.items.find((element) => {
     return element.fields.domainSlug === spielberichtSlug;
   });
-
-  console.log(filteredData);
 
   return (
     <div className="pt-24 bg-gray-50">

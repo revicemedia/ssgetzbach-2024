@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Spielberichte from "@/components/Spielberichte/Spielberichte";
 import SubPageHeader from "@/components/SubPageHeader/SubPageHeader";
 import { client } from "@/contentful";
@@ -7,7 +9,10 @@ export interface Params {
 }
 
 async function getSpielberichte() {
-  const res = await client.getEntries({ content_type: "spielberichte" });
+  const res = await client.getEntries({
+    content_type: "spielberichte",
+    order: "-sys.createdAt",
+  });
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 

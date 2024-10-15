@@ -4,6 +4,7 @@ import "./globals.css";
 import openGraphImage from "./favicon.ico";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import Wartung from "@/components/Wartung/Wartung";
 
 const outfit = Outfit({ subsets: [] });
 
@@ -21,12 +22,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const wartung = true;
+
   return (
     <html lang="en">
       <body className={outfit.className}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        {!wartung ? (
+          <>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </>
+        ) : (
+          <>
+            <Wartung />
+          </>
+        )}
       </body>
     </html>
   );

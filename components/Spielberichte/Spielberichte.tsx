@@ -22,7 +22,7 @@ export default function Spielberichte({ data }: any) {
                   <div className="relative w-full">
                     <img
                       src={
-                        item.fields.image?.fields.file.url ||
+                        item.fields.image?.fields?.file.url ||
                         "/images/volleyball.jpg"
                       }
                       alt=""

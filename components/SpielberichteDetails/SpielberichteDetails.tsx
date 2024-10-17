@@ -60,7 +60,7 @@ export default async function SpielberichteDetails({ data }: any) {
         <img
           alt={data.fields.headline}
           src={
-            (data.fields.image && data.fields.image.fields.file.url) ||
+            (data.fields.image && data.fields.image?.fields?.file.url) ||
             "/images/volleyball.jpg"
           }
           className="aspect-video w-full rounded-xl bg-gray-50 object-cover mt-12"

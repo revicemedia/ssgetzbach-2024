@@ -22,7 +22,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const wartung = true;
+  const wartung = false;
 
   return (
     <html lang="en">

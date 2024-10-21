@@ -39,7 +39,7 @@ export default function StartNews({ showHeadline, data }: NewsProps) {
                   ? `/verein/spielberichte/${item.fields.domainSlug}`
                   : `/verein/news/${item.fields.domainSlug}`
               }
-              className="flex flex-col items-start justify-between"
+              className="flex flex-col items-start"
             >
               <div className="relative w-full">
                 <img
@@ -56,7 +56,7 @@ export default function StartNews({ showHeadline, data }: NewsProps) {
                   <time dateTime="" className="text-gray-500">
                     {item.fields.date}
                   </time>
-                  <div className="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+                  <div className="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600">
                     {item.fields.author}
                   </div>
                 </div>

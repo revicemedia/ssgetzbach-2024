@@ -42,8 +42,8 @@ const features = [
     name: "Vertreten durch den Vorstand:",
     description: [
       { id: 1, text: "Julian Schröder", type: "Text" },
-      { id: 2, text: "Sarah Gerhards", type: "Text" },
-      { id: 3, text: "Janina Pattberg", type: "Text" },
+      { id: 2, text: "Janina Pattberg", type: "Text" },
+      { id: 3, text: "Melissa Hess", type: "Text" },
       { id: 4, text: "Rolf Grün", type: "Text" },
     ],
     icon: UserCircleIcon,

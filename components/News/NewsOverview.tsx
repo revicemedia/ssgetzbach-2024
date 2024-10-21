@@ -41,7 +41,7 @@ export default function NewsOverview({ showHeadline, data }: NewsProps) {
                       ? `/verein/spielberichte/${item.fields.domainSlug}`
                       : `/verein/news/${item.fields.domainSlug}`
                   }
-                  className="group flex flex-col items-start justify-between"
+                  className="group flex flex-col items-start"
                 >
                   <div className="relative w-full">
                     <img
@@ -69,11 +69,11 @@ export default function NewsOverview({ showHeadline, data }: NewsProps) {
                           {item.fields.headline}
                         </div>
                       </h3>
-                      {/* {item.fields.previewText && (
-                    <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                      {item.fields.previewText}
-                    </p>
-                  )} */}
+                      {item.fields.previewText && (
+                        <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                          {item.fields.previewText}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </a>

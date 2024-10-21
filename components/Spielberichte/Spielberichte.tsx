@@ -17,7 +17,7 @@ export default function Spielberichte({ data }: any) {
                       ? `/verein/spielberichte/${item.fields.domainSlug}`
                       : `/verein/news/${item.fields.domainSlug}`
                   }
-                  className="group flex flex-col items-start justify-between"
+                  className="group flex flex-col items-start"
                 >
                   <div className="relative w-full">
                     <img
@@ -34,7 +34,7 @@ export default function Spielberichte({ data }: any) {
                       <time dateTime="" className="text-gray-500">
                         {item.fields.date}
                       </time>
-                      <div className="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 group-hover:bg-gray-100">
+                      <div className="relative rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600">
                         {item.fields.author}
                       </div>
                     </div>

@@ -165,7 +165,7 @@ export default function Navbar() {
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none hover:text-red-600">
-              Volleyball
+              Verein
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -183,7 +183,7 @@ export default function Navbar() {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-sm overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {products.map((item) => (
+                  {verein.map((item) => (
                     <div
                       key={item.name}
                       className="group relative flex gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
@@ -205,7 +205,7 @@ export default function Navbar() {
           </Popover>
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-md font-regular leading-6 text-gray-900 focus-visible:outline-none hover:text-red-600">
-              Verein
+              Volleyball
               <ChevronDownIcon
                 className="h-5 w-5 flex-none text-gray-400"
                 aria-hidden="true"
@@ -223,7 +223,7 @@ export default function Navbar() {
             >
               <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-sm overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-4">
-                  {verein.map((item) => (
+                  {products.map((item) => (
                     <div
                       key={item.name}
                       className="group relative flex gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
@@ -374,7 +374,7 @@ export default function Navbar() {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-lg font-regular leading-7 text-gray-900 hover:bg-gray-50">
-                        Volleyball
+                        Verein
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -384,7 +384,7 @@ export default function Navbar() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {products.map((item) => (
+                        {verein.map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"
@@ -403,7 +403,7 @@ export default function Navbar() {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-lg font-regular leading-7 text-gray-900 hover:bg-gray-50">
-                        Verein
+                        Volleyball
                         <ChevronDownIcon
                           className={classNames(
                             open ? "rotate-180" : "",
@@ -413,7 +413,7 @@ export default function Navbar() {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
-                        {verein.map((item) => (
+                        {products.map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as="a"

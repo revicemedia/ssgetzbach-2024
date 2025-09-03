@@ -6,7 +6,7 @@ export interface Params {
 }
 
 async function getData() {
-  const res = await client.getEntry("4YaZ7rE3848rZh8NtpyzvR");
+  const res = await client.getEntry("6t8JHuHiykOkQ4v5adoPPC");
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 

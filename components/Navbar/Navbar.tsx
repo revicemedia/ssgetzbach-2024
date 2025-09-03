@@ -27,12 +27,6 @@ const products = [
     icon: CursorArrowRaysIcon,
   },
   {
-    name: "2. Damen",
-    description: "VVRP Rheinland-Pfalz-Liga Frauen | Staffel D",
-    href: "/volleyball/damen-2",
-    icon: FingerPrintIcon,
-  },
-  {
     name: "Hobby-Volleyballer",
     description: "Keine Teilnahme am regulären Liga-Betrieb",
     href: "/volleyball/hobby",
@@ -82,35 +76,26 @@ const verein = [
 const gymnastik = [
   { name: "Gruppe 1", href: "/gymnastik/gruppe-1" },
   { name: "Gruppe 2", href: "/gymnastik/gruppe-2" },
+  { name: "Pilates", href: "/gymnastik/pilates" },
   { name: "Senioren Gymnastik", href: "/gymnastik/senioren" },
   // { name: "Kursangebot", href: "/gymnastik/kursangebot" },
 ];
 
 const jugend = [
   { name: "1-2 Jahre", href: "/jugend/jugend-1-2" },
+  { name: "2-3 Jahre", href: "/jugend/jugend-2-3" },
   { name: "3-4 Jahre", href: "/jugend/jugend-3-4" },
+  { name: "4-5 Jahre", href: "/jugend/jugend-4-5" },
   { name: "5-6 Jahre", href: "/jugend/jugend-5-6" },
   { name: "Tanzen 3-5 Jahre", href: "/jugend/tanzen-3-5" },
   { name: "Tanzen 6-9 Jahre", href: "/jugend/tanzen-6-9" },
-  { name: "Ballschule", href: "/jugend/ballschule" },
+  { name: "Sportkids-1-2", href: "/jugend/sportkids-1-2" },
+  { name: "Sportkids-3-4", href: "/jugend/sportkids-3-4" },
   { name: "Volleyball-Anfänger", href: "/jugend/volleyball-anfaenger" },
 ];
 
 const navigation = {
   social: [
-    // {
-    //   name: 'Facebook',
-    //   href: '#',
-    //   icon: (props) => (
-    //     <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-    //       <path
-    //         fillRule="evenodd"
-    //         d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-    //         clipRule="evenodd"
-    //       />
-    //     </svg>
-    //   ),
-    // },
     {
       name: "Instagram",
       href: "https://www.instagram.com/ssgetzbach/",

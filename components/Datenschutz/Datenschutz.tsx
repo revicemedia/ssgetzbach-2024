@@ -9,13 +9,34 @@ import {
 
 const features = [
   {
-    name: "Dieser Bereich wird noch ausgefüllt.",
+    name: "Allgemeine Angaben",
     description: [
       {
         id: 1,
-        text: "Weitere Informationen zum Thema Datenschutz werden hier in Kürze aufgeführt. Wenden Sie sich bei Rückfragen bitte an die im Impressum aufgeführte Person.",
+        text: "Spiel- und Sportgemeinschaft Etzbach e.V.",
         type: "Text",
       },
+      { id: 2, text: "Drosselweg 9", type: "Text" },
+      { id: 3, text: "57539 Etzbach", type: "Text" },
+      { id: 4, text: "Vereinsregister: VR10252", type: "Text" },
+      { id: 5, text: "Registergericht: Amtsgericht Montabaur", type: "Text" },
+    ],
+    icon: InformationCircleIcon,
+  },
+  {
+    name: "Vertreten durch den Vorstand:",
+    description: [
+      { id: 1, text: "Julian Schröder", type: "Text" },
+      { id: 2, text: "Janina Pattberg", type: "Text" },
+      { id: 3, text: "Melissa Hess", type: "Text" },
+      { id: 4, text: "Rolf Grün", type: "Text" },
+    ],
+    icon: InformationCircleIcon,
+  },
+  {
+    name: "Datenerhebung",
+    description: [
+      { id: 1, text: "Wir erheben keine personenbezogenen Daten. Der Server (Vercel) speichert standardgemäß Daten wie IP-Adresse, Land und Dauer des Besuches. Diese Daten werden durch uns nicht erhoben, ausgelesen oder verarbeitet. Sie dienen lediglich der Sicherheit und werden selbstverständlich nicht verbreitet.", type: "Text" },
     ],
     icon: InformationCircleIcon,
   },
